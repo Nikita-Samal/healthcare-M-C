@@ -23,8 +23,14 @@ dependencies:
   # Cloud Firestore
   cloud_firestore: ^5.6.9
 
+  # Firebase Realtime Database
+  firebase_database: ^11.3.10
+
   # Firebase Storage
   firebase_storage: ^12.4.6
+
+  # Cloud Functions
+  cloud_functions: ^5.3.6
 
   # Firebase Analytics
   firebase_analytics: ^11.4.6

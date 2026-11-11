@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417088841400",
+    "project_id": "morrow-aa31b",
+    "storage_bucket": "morrow-aa31b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417088841400:android:1676faaa607e902f30f64d",
+        "android_client_info": {
+          "package_name": "com.example.morrow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbTP21j5htLakhuysq3t3K-Ule9lNP8IU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

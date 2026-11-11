@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:logger/logger.dart';
 import '../../../core/constants/app_constants.dart';
+import '../../../core/services/firebase_service.dart';
 import '../models/user_model.dart';
 
 /// Result type for auth operations
@@ -34,8 +35,8 @@ class AuthService {
   AuthService._();
   static final AuthService instance = AuthService._();
 
-  final _auth = FirebaseAuth.instance;
-  final _firestore = FirebaseFirestore.instance;
+  final _auth = FirebaseService.instance.auth;
+  final _firestore = FirebaseService.instance.firestore;
   final _logger = Logger(printer: PrettyPrinter(methodCount: 0));
 
   // ─── Auth State Stream ──────────────────────────────────────────────────────

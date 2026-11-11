@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // User profiles collection
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isOwner(userId)
+                    && request.resource.data.email is string
+                    && request.resource.data.createdAt is timestamp;
+      allow update: if isOwner(userId);
+      allow delete: if false; // Soft deletes / account deletion via Cloud Function
+
+      // Nested user data (e.g. child records, medical notes, daily logs)
+      match /{allSubcollections=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+  }
+}
